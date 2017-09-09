@@ -72,13 +72,13 @@ module TogglV8
     # NB! Maximum date span (until - since) is one year.
 
     # extension can be one of ['.pdf', '.csv', '.xls']. Possibly others?
-    def report(type, extension, params)
-      raise "workspace_id is required" if @workspace_id.nil?
-      get "#{type}#{extension}", {
-        :'user_agent' => @user_agent,
-        :'workspace_id' => @workspace_id,
-      }.merge(params)
-    end
+    # def report(type, extension, params)
+    #   raise "workspace_id is required" if @workspace_id.nil?
+    #   get "#{type}#{extension}", {
+    #     :'user_agent' => @user_agent,
+    #     :'workspace_id' => @workspace_id,
+    #   }.merge(params)
+    # end
 
     def weekly(extension='', params={})
       report('weekly', extension, params)
@@ -156,14 +156,14 @@ module TogglV8
     #                       (integer, optional)
     # order_field string  : name/assignee/duration/billable_amount/estimated_seconds
     # order_desc string   : on/off, on for descending and off for ascending order
-    def project(project_id, params={})
-      raise "workspace_id is required" if @workspace_id.nil?
-      get "project", {
-        :'user_agent' => @user_agent,
-        :'workspace_id' => @workspace_id,
-        :'project_id' => project_id,
-      }.merge(params)
-    end
+    # def project(project_id, params={})
+    #   raise "workspace_id is required" if @workspace_id.nil?
+    #   get "project", {
+    #     :'user_agent' => @user_agent,
+    #     :'workspace_id' => @workspace_id,
+    #     :'project_id' => project_id,
+    #   }.merge(params)
+    # end
 
     ##
     # ---------
